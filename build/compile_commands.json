@@ -1,0 +1,14 @@
+[
+{
+  "directory": "D:/OI/Project/HarmonyAutoTest/build",
+  "command": "D:\\OI\\Document\\mingw64\\bin\\g++.exe  @CMakeFiles/main.dir/includes_CXX.rsp -g -o CMakeFiles\\main.dir\\src\\ModulesManager.cpp.obj -c D:\\OI\\Project\\HarmonyAutoTest\\src\\ModulesManager.cpp",
+  "file": "D:/OI/Project/HarmonyAutoTest/src/ModulesManager.cpp",
+  "output": "CMakeFiles/main.dir/src/ModulesManager.cpp.obj"
+},
+{
+  "directory": "D:/OI/Project/HarmonyAutoTest/build",
+  "command": "D:\\OI\\Document\\mingw64\\bin\\g++.exe  @CMakeFiles/main.dir/includes_CXX.rsp -g -o CMakeFiles\\main.dir\\src\\main.cpp.obj -c D:\\OI\\Project\\HarmonyAutoTest\\src\\main.cpp",
+  "file": "D:/OI/Project/HarmonyAutoTest/src/main.cpp",
+  "output": "CMakeFiles/main.dir/src/main.cpp.obj"
+}
+]

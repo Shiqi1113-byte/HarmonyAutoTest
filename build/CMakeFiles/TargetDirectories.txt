@@ -1,0 +1,3 @@
+D:/OI/Project/HarmonyAutoTest/build/CMakeFiles/main.dir
+D:/OI/Project/HarmonyAutoTest/build/CMakeFiles/edit_cache.dir
+D:/OI/Project/HarmonyAutoTest/build/CMakeFiles/rebuild_cache.dir

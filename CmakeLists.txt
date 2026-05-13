@@ -1,0 +1,19 @@
+cmake_minimum_required(VERSION 3.10)
+project(FinalDust)
+
+set(CMAKE_C_STANDARD 17)
+set(EXECUTABLE_OUTPUT_PATH ${CMAKE_CURRENT_SOURCE_DIR}/bin)
+
+
+file(GLOB_RECURSE src ${CMAKE_CURRENT_SOURCE_DIR}/src/*.cpp)
+
+set(LIBS 
+	mingw32
+)
+
+add_executable(main ${src})
+target_link_libraries(main ${LIBS})
+target_include_directories(main
+	PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include
+	PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/third_lib
+)
