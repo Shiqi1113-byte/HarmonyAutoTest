@@ -19,9 +19,9 @@ private:
 		跨模块的部分，我们只关心 main_file 给出的接口
 	*/
 	struct ObjectNode {
-		// function / class
 		ObjectNode(const std::string &_name, const std::string &_type) : name(_name), type(_type) {}
 		std::string name;
+		// function / class
 		std::string type;
 		std::vector<std::string> calls; 
 		std::vector<std::string> called_by;
@@ -35,7 +35,7 @@ private:
 		}
 
 		void parse() {
-
+			
 		}
 
 		std::string file_path, module_path;
