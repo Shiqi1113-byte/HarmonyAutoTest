@@ -1,19 +1,36 @@
 cmake_minimum_required(VERSION 3.10)
-project(FinalDust)
+project(HarmonyAutoTest)
 
-set(CMAKE_C_STANDARD 17)
+# 設定 C++ 和 C 的標準 (編譯 tree-sitter 需要 C 標準)
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_C_STANDARD 11)
+
+# 設定執行檔輸出目錄到 bin 資料夾
 set(EXECUTABLE_OUTPUT_PATH ${CMAKE_CURRENT_SOURCE_DIR}/bin)
 
-
-file(GLOB_RECURSE src ${CMAKE_CURRENT_SOURCE_DIR}/src/*.cpp)
-
-set(LIBS 
-	mingw32
+# 包含標頭檔目錄
+include_directories(
+    ${CMAKE_CURRENT_SOURCE_DIR}/include
+    ${CMAKE_CURRENT_SOURCE_DIR}/third_lib
+    ${CMAKE_CURRENT_SOURCE_DIR}/third_lib/tree_sitter
+    ${CMAKE_CURRENT_SOURCE_DIR}/third_lib/tree_sitter-typescript/typescript/src
 )
 
-add_executable(main ${src})
-target_link_libraries(main ${LIBS})
-target_include_directories(main
-	PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/include
-	PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/third_lib
+# 定義要編譯的原始碼檔案清單
+set(SOURCES
+    src/main.cpp
+    src/ModulesManager.cpp
+    
+    # Tree-sitter 核心
+    third_lib/tree_sitter/lib.c
+    
+    # Tree-sitter TypeScript 解析器
+    third_lib/tree_sitter-typescript/typescript/src/parser.c
+    third_lib/tree_sitter-typescript/typescript/src/scanner.c
 )
+
+# 生成執行檔
+add_executable(main ${SOURCES})
+
+# 連結需要的函式庫
+target_link_libraries(main mingw32)
